@@ -6,8 +6,10 @@ class Baraja{
  private:
   list <Carta> cartas_;
  public:
-  void setBaraja(string archivo,string reverso="");
+  void setBaraja(string archivo);
   list <Carta> getBaraja(){return cartas_;}
   void mezcla();
+  inline void dropMiembro(){cartas_.pop_front();}
+  inline void devuelve_carta(Carta c){cartas_.push_back(c);}
 };
 #endif

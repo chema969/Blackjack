@@ -4,21 +4,17 @@
 #include <string>
 #include <fstream>
 using namespace std;
-void Baraja::setBaraja(string archivo,string reverso){
-  string aux1,aux2;
-  int i=0;
+void Baraja::setBaraja(string archivo){
+  string aux1,aux2,aux3;
   cartas_.clear();
   ifstream fichero;
   fichero.open(archivo);
   while(getline(fichero,aux1,',')){
     getline(fichero,aux2,',');
-    i++;
-    Carta c(stoi(aux1),aux2,i);
-    getline(fichero,aux1,',');
-    c.setAnverso(aux1);
+    getline(fichero,aux3,',');
+    Carta c(stoi(aux1),aux2,aux3);
     getline(fichero,aux1,'\n');
     c.setColor(aux1);
-    c.setReverso(reverso);
     cartas_.push_back(c);
     }
 }

@@ -20,6 +20,6 @@ int main(){
 void imprime(list<Carta> c){
   list <Carta>::iterator it;
    for(it=c.begin();it!=c.end();++it){
-     cout<<it->getValor()<<","<<it->getFigura()<<","<<it->getReverso()<<" ,\n";
+     cout<<it->getValor()<<","<<it->getFigura()<<","<<it->getColor()<<","<<it->getPalo()<<" ,\n";
     }
  }
