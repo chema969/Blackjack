@@ -1,4 +1,4 @@
-11,pica,as,negro
+0,pica,as,negro
 2,pica,2,negro
 3,pica,3,negro
 4,pica,4,negro
@@ -11,7 +11,7 @@
 10,pica,J,negro
 10,pica,Q,negro
 10,pica,K,negro
-11,trebol,as,negro
+0,trebol,as,negro
 2,trebol,2,negro
 3,trebol,3,negro
 4,trebol,4,negro
@@ -24,7 +24,7 @@
 10,trebol,J,negro
 10,trebol,Q,negro
 10,trebol,K,negro
-11,diamante,as,rojo
+0,diamante,as,rojo
 2,diamante,2,rojo
 3,diamante,3,rojo
 4,diamante,4,rojo
@@ -37,7 +37,7 @@
 10,diamante,J,rojo
 10,diamante,Q,rojo
 10,diamante,K,rojo
-11,corazon,as,rojo
+0,corazon,as,rojo
 2,corazon,2,rojo
 3,corazon,3,rojo
 4,corazon,4,rojo

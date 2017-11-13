@@ -1,0 +1,8 @@
+0,pica,as,negro
+2,pica,Q,negro
+0,pica,as,negro
+1,pica,Q,negro
+1,pica,Q,negro
+1,pica,Q,negro
+5,pica,Q,negro
+10,pica,e,frfr
