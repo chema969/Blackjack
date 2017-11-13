@@ -3,15 +3,9 @@
 #include <list>
 #include "jugador.h"
 #include "crupier.h"
-class Blackjack(){
-  private: 
-   Jugador jugador_principal_;
-   list <Jugador> jugadores_;
-   Crupier c_;
-  
-
-
-
-
-
+#include "baraja.h"
+   void partida(Crupier c,Jugador j,int i);
+   void mostrarCartas(list <Carta> carta,string categoria,int &v);
+   int menu(int v);
+   bool sobrepasa(int v);
 #endif

@@ -3,6 +3,8 @@
 #include "baraja.h"
 #include <string>
 #include <fstream>
+#include <cstdlib>
+#include <ctime>
 using namespace std;
 void Baraja::setBaraja(string archivo){
   string aux1,aux2,aux3;
@@ -29,14 +31,27 @@ it=cartas_.begin();
     ++it;
    cartas_.pop_front();
    }
-  for(i=0;i<50;i++){
+   for(i=0;i<50;i++){
     x=rand()%j;
     it=cartas_.begin();
       for(k=0;k<x;k++){++it;}
-      cartas_.erase(it);
       if(i%2){cartas_.push_back(*it);}
       else{cartas_.push_front(*it);} 
+      cartas_.erase(it);
       }
  cartas_.reverse();
  }
  
+
+void Baraja::devuelve_carta(list <Carta> c){
+  list <Carta>::iterator it;
+  for(it=c.begin();it!=c.end();++it){
+    cartas_.push_back(*it);
+    }
+  }
+Carta Baraja::devuelvePrimerElemento(){
+  list <Carta>::iterator it;
+  it=cartas_.begin();
+  return *it;
+ }
+

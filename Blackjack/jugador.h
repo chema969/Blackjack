@@ -3,16 +3,19 @@
 #include <string>
 #include "persona.h"
 #include <list>
+#include "baraja.h"
 class Jugador:public Persona{
    private:
   int dinero_;
-  string codigo_;
+  list <Carta> c_;
    public:
-  Jugador(string DNI,string codigo,int dinero,string nombre="", string apellidos="", string direccion="", string localidad="", string provincia="",string pais="");
-  inline void setCodigo( string codigo){codigo_=codigo;}
-  inline  string getCodigo(){return codigo_;}
+  Jugador(string DNI,int dinero,string nombre="", string apellidos="", string direccion="", string localidad="", string provincia="",string pais="");
   inline void setDinero(int dinero){dinero_=dinero;}
   inline int getDinero(){return dinero_;}
+  inline list <Carta> getCartasJugador(){return c_;}
+  inline void setCartasJugador(Carta c){ c_.push_back(c);}
+  inline void dropCartasJugador(){c_.clear();}
+  inline int tamanyoCarta(){return c_.size();}
 };
 
 
