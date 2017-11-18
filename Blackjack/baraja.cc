@@ -5,7 +5,6 @@
 #include <fstream>
 #include <cstdlib>
 #include <ctime>
-using namespace std;
 void Baraja::setBaraja(string archivo){
   string aux1,aux2,aux3;
   cartas_.clear();
@@ -22,6 +21,7 @@ void Baraja::setBaraja(string archivo){
 }
 
 void Baraja::mezcla(){
+if(!cartas_.empty()){
 int i,j=cartas_.size(),k=0,x;
 srand(time(NULL));
 list <Carta>::iterator it;
@@ -41,7 +41,7 @@ it=cartas_.begin();
       }
  cartas_.reverse();
  }
- 
+} 
 
 void Baraja::devuelve_carta(list <Carta> c){
   list <Carta>::iterator it;
@@ -49,9 +49,12 @@ void Baraja::devuelve_carta(list <Carta> c){
     cartas_.push_back(*it);
     }
   }
+
 Carta Baraja::devuelvePrimerElemento(){
+if(!cartas_.empty()){
   list <Carta>::iterator it;
   it=cartas_.begin();
   return *it;
+  }
  }
 

@@ -2,6 +2,7 @@
 #define CRUPIER_H
 #include <string>
 #include "persona.h"
+#include "jugador.h"
 class Crupier:public Jugador{
 private:
   string codigo_;
