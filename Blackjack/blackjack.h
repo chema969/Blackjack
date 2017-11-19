@@ -6,7 +6,7 @@
 #include "baraja.h"
    void partida(Crupier &c,list <Jugador> &jugador_);
    int mostrarCartas(list <Carta> carta,string categoria);
-   int menu(int v);
+   int menu();
    bool sobrepasa(int v);
    void hora_de_las_apuestas(Jugador &jugador_,Baraja &baraja_,Crupier &c);
    void inicio(Jugador &jugador_,Baraja &baraja_);

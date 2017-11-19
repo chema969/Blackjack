@@ -60,14 +60,13 @@ cout<<"\n";
 return v;
 }
 
-int menu(int v){
+int menu(){
   int i;
-  cout<<"---------------------\n";
-  cout<<"| 1.Pedir carta      |\n";
-  cout<<"| 2.Doblar apuesta   |\n";
-  cout<<"| 3.Plantarse        |\n";
-  cout<<"---------------------\n\n";
-  if(v==21){return 3;}
+  cout<<"---------------------------------\n";
+  cout<<"| 1.Pedir carta                 |\n";
+  cout<<"| 2.Doblar apuesta              |\n";
+  cout<<"| 3.Plantarse y levantar cartas |\n";
+  cout<<"---------------------------------\n\n";
   cin>>i;
   return i;
   }
@@ -101,18 +100,12 @@ void hora_de_las_apuestas(Jugador &jugador,Baraja &baraja,Crupier &c){
  //Esta sera la parte de la partida donde el jugador puede pedir cartas o doblar la apuesta 
   while (j!=3){
    cout<<"Jugador "<<jugador.getNombre()<<endl;
-   j=menu(jugador.getValorCartas());
+   j=menu();
    switch(j){
      case 1:
       jugador.setCartasJugador(baraja.devuelvePrimerElemento());
       baraja.dropMiembro();
-      jugador.setValorCartas(mostrarCartas(jugador.getCartasJugador(),jugador.getNombre()));
-        if(sobrepasa(jugador.getValorCartas())){
-            j=3;
-            cout<<"Te pasaste, perdiste "<<jugador.getApuesta()<<endl;
-            jugador.setDinero(jugador.getDinero()-jugador.getApuesta());
-            c.setDinero(c.getDinero()+jugador.getApuesta());
-        }
+      cout<<"Tienes "<<jugador.tamanyoCarta()<<" cartas"<<endl;
       break;
      case 2: 
       if(jugador.getApuesta()*2>jugador.getDinero())cout<<"no puedes doblar la apuesta!"<<endl;
@@ -120,10 +113,18 @@ void hora_de_las_apuestas(Jugador &jugador,Baraja &baraja,Crupier &c){
      jugador.setApuesta(jugador.getApuesta()*2);
       cout<<"Apuesta="<<jugador.getApuesta()<<endl;}
       break;
-     default:
+     case 3:
+      jugador.setValorCartas(mostrarCartas(jugador.getCartasJugador(),jugador.getNombre()));
+        if(sobrepasa(jugador.getValorCartas())){
+            j=3;
+            cout<<"Te pasaste, perdiste "<<jugador.getApuesta()<<endl;
+            jugador.setDinero(jugador.getDinero()-jugador.getApuesta());
+            c.setDinero(c.getDinero()+jugador.getApuesta());
+        }
       cout<<"Te plantaste con un valor "<<jugador.getValorCartas()<<" y una apuesta "<<jugador.getApuesta()<<"\n";
       break;
-     
+      default: 
+        cout<<"Valor fuera del menu"<<endl;
     } 
 
 }
