@@ -24,3 +24,10 @@ int Jugador::setValorCartas(){
 }
 return v;
 }
+
+
+bool Jugador::setApuesta(int apuesta){
+    if(apuesta>dinero_) return false;
+    apuesta_=apuesta;
+    return true;
+    } 

@@ -40,9 +40,7 @@ int main(){
      else{
       cout<<"Introduce apuesta del jugador "<<it->getNombre()<<": ";
       cin>>i;
-      if(i<=it->getDinero()){
-      it->setApuesta(i);
-      it++;}
+      if(it->setApuesta(i))it++;
       else cout<<"No apuestes mas que el dinero que tienes"<<endl;
       }
      }

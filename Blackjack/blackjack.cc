@@ -108,7 +108,7 @@ void hora_de_las_apuestas(Jugador &jugador,Baraja &baraja,Crupier &c){
       cout<<"Tienes "<<jugador.tamanyoCarta()<<" cartas"<<endl;
       break;
      case 2: 
-      if(jugador.getApuesta()*2>jugador.getDinero())cout<<"no puedes doblar la apuesta!"<<endl;
+      if(!jugador.setApuesta(jugador.getApuesta()*2))cout<<"no puedes doblar la apuesta!"<<endl;
      else{
      jugador.setApuesta(jugador.getApuesta()*2);
       cout<<"Apuesta="<<jugador.getApuesta()<<endl;}

@@ -12,7 +12,7 @@ class Jugador:public Persona{
   Jugador(string DNI,int dinero,string nombre="", string apellidos="", string direccion="", string localidad="", string provincia="",string pais="");
   inline void setDinero(int dinero){dinero_=dinero;}
   inline int getDinero()const{return dinero_;}
-  inline void setApuesta(int apuesta){apuesta_=apuesta;}
+  bool setApuesta(int apuesta);
   inline int getApuesta()const{return apuesta_;}
   inline list <Carta> getCartasJugador(){return c_;}
   inline void setCartasJugador(Carta c){ c_.push_back(c);}
